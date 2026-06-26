@@ -2,6 +2,9 @@ import NextAuth, { AuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
+import { supabaseAdmin } from '@/lib/supabase'
+import bcrypt from 'bcryptjs'
+
 export const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
@@ -15,30 +18,29 @@ export const authOptions: AuthOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // Cek username & password dari env (simple, tidak perlu database)
-        if (
-          credentials?.username === process.env.ADMIN_USERNAME &&
-          credentials?.password === process.env.ADMIN_PASSWORD
-        ) {
-          return { id: '1', name: 'Admin', email: process.env.ADMIN_EMAIL }
+        if (!credentials?.username || !credentials?.password) return null
+
+        // Ambil data admin dari Supabase
+        const { data: admin } = await supabaseAdmin
+          .from('admins')
+          .select('*')
+          .eq('username', credentials.username)
+          .single()
+
+        if (!admin) return null
+
+        // Bandingkan password
+        const isValid = await bcrypt.compare(credentials.password, admin.password)
+
+        if (isValid) {
+          return { id: admin.id, name: admin.name, email: admin.username }
         }
+
         return null
       },
     }),
   ],
-  callbacks: {
-    async signIn({ user }) {
-      // Hanya izinkan email admin yang spesifik
-      const allowedEmails = [process.env.ADMIN_EMAIL!]
-      if (user.email && allowedEmails.includes(user.email)) {
-        return true
-      }
-      return false
-    },
-    async session({ session, token }) {
-      return session
-    },
-  },
+  
   pages: {
     signIn: '/admin/login',
     error: '/admin/login',

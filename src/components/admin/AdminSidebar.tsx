@@ -3,11 +3,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { signOut } from 'next-auth/react'
-import { LayoutDashboard, FolderOpen, Briefcase, Award, LogOut } from 'lucide-react'
+import { LayoutDashboard, FolderOpen, Briefcase, Award, LogOut, Users } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+  { label: 'Admin', href: '/admin/admins', icon: Users },
   { label: 'Projects', href: '/admin/projects', icon: FolderOpen },
   { label: 'Experience', href: '/admin/experience', icon: Briefcase },
   { label: 'Certificates', href: '/admin/certificates', icon: Award },
