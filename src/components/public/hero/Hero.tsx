@@ -69,7 +69,7 @@ export default function Hero() {
                 Lihat Project
               </a>
               
-              <a href="/cv-emir-ramadhan.pdf" download className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+              <a href="/CV - Emir.pdf" download className={buttonVariants({ variant: 'outline', size: 'lg' })}>
                 <Download size={16} />
                 Download CV
               </a>
