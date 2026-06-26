@@ -24,20 +24,13 @@ npm install
 2. Buka **SQL Editor**, jalankan isi file `supabase-schema.sql`
 3. Salin **Project URL** dan **anon key** dari Settings > API
 
-### 3. Setup Google OAuth
-1. Buka [console.cloud.google.com](https://console.cloud.google.com)
-2. Buat project baru > APIs & Services > Credentials
-3. Buat OAuth 2.0 Client ID
-4. Tambahkan authorized redirect URI: `http://localhost:3000/api/auth/callback/google`
-5. Salin Client ID dan Client Secret
-
-### 4. Isi .env.local
+### 3. Isi .env.local
 ```bash
 cp .env.local.example .env.local
 ```
 Lalu isi semua value di `.env.local`
 
-### 5. Jalankan
+### 4. Jalankan
 ```bash
 npm run dev
 ```
