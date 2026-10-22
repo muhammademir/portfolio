@@ -53,7 +53,7 @@ export default async function AdminDashboard() {
 
       <div className="mt-8 p-4 rounded-xl bg-[#F7F6F3] border border-[#E5E4DF]">
         <p className="text-[12px] text-[#6B6B68]">
-          Perubahan yang kamu buat akan langsung tampil di halaman publik dalam ~60 detik.
+          Perubahan yang kamu buat di admin panel akan langsung tampil di halaman publik secara realtime.
         </p>
       </div>
     </div>

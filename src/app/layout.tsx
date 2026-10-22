@@ -9,13 +9,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: 'Muhammad Emir Fadlyanto — Fullstack Developer',
-  description: 'Portfolio of Muhammad Emir Fadlyanto, Fullstack Developer & IoT Enthusiast based in Bandung.',
+  title: 'Muhamad Emir Fadlyanto — Fullstack Developer',
+  description: 'Portfolio of Muhamad Emir Fadlyanto, Fullstack Developer & IoT Enthusiast based in Bandung.',
   openGraph: {
-    title: 'Muhammad Emir Fadlyanto — Fullstack Developer',
+    title: 'Muhamad Emir Fadlyanto — Fullstack Developer',
     description: 'Fullstack Developer & IoT Enthusiast based in Bandung.',
     url: '',
-    siteName: 'Muhammad Emir Fadlyanto',
+    siteName: 'Muhamad Emir Fadlyanto',
     locale: 'id_ID',
     type: 'website',
   },

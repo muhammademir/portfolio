@@ -8,11 +8,11 @@ import { Magnet } from '@/components/animations/Magnet'
 const skillGroups = [
   {
     category: 'Frontend',
-    skills: ['Next.js', 'React', 'Tailwind CSS', 'shadcn/ui', 'HTML & CSS', 'Bootstrap', 'TypeScript', 'JavaScript'],
+    skills: ['Next.js', 'React.js', 'Tailwind CSS', 'shadcn/ui', 'HTML & CSS', 'Bootstrap', 'TypeScript', 'JavaScript', 'Vue.js', 'Inertia.js'],
   },
   {
     category: 'Backend',
-    skills: ['Laravel', 'REST API', 'MySQL', 'PHP','MongoDB','C++'],
+    skills: ['Laravel', 'REST API', 'MySQL', 'PHP', 'MongoDB', 'C++'],
   },
   {
     category: 'IoT & Hardware',

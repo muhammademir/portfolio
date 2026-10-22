@@ -9,7 +9,8 @@ import Contact from '@/components/public/contact/Contact'
 import Footer from '@/components/public/Footer'
 import { supabase } from '@/lib/supabase'
 
-export const revalidate = 60 // revalidate setiap 60 detik
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export default async function HomePage() {
   // Fetch semua data dari Supabase
