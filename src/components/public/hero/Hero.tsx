@@ -69,7 +69,13 @@ export default function Hero() {
                 Lihat Project
               </a>
               
-              <a href="/Muhammad_Emir_Fadlyanto.pdf" download className={buttonVariants({ variant: 'outline', size: 'lg' })}>
+              <a 
+                href="/Muhammad_Emir_Fadlyanto.pdf" 
+                download="Muhammad_Emir_Fadlyanto.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={buttonVariants({ variant: 'outline', size: 'lg' })}
+              >
                 <Download size={16} />
                 Download CV
               </a>
